@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Silhouette</title>
+        <link rel='icon' href='resources/favicon.png'>
+        
+        <link rel='stylesheet' href='source/game/styles.css'>
+        
+        <!-- Audio -->
+        <audio id='correct' src='resources/audio/correct.mp3' preload='auto'></audio>
+        <audio id='grow' src='resources/audio/grow.mp3' preload='auto'></audio>
+        <audio id='incorrect' src='resources/audio/incorrect.mp3' preload='auto'></audio>
+        <audio id='score' src='resources/audio/score.mp3' preload='auto'></audio>
+    </head>
+    
+    <body onLoad='init ()'>
+        <!-- This file contains the entry point of the program -->
+        <script src='source/game/index.js'></script>
+        
+        <!-- The rest of the files -->
+        <script src='libraries/gl-matrix-min.js'></script>
+        <script src='source/animation/animations/Animation.js'></script>
+        <script src='source/animation/animations/ColorAnm.js'></script>
+        <script src='source/animation/animations/RotationAnm.js'></script>
+        <script src='source/animation/animations/ScalingAnm.js'></script>
+        <script src='source/animation/animations/TranslationAnm.js'></script>
+        <script src='source/animation/Ease.js'></script>
+        <script src='source/game/gameObjects/GameObject.js'></script>
+        <script src='source/game/gameObjects/Background.js'></script>
+        <script src='source/game/gameObjects/Cube.js'></script>
+        <script src='source/game/gameObjects/OrthoCamera.js'></script>
+        <script src='source/game/gameObjects/Silhouette.js'></script>
+        <script src='source/game/gameObjects/Structure.js'></script>
+        <script src='source/game/gameStates/GameState.js'></script>
+        <script src='source/game/gameStates/gameplay/Gameplay.js'></script>
+        <script src='source/game/gameStates/gameplay/GameplayChoose.js'></script>
+        <script src='source/game/gameStates/gameplay/GameplayCorrect.js'></script>
+        <script src='source/game/gameStates/gameplay/GameplayExpand.js'></script>
+        <script src='source/game/gameStates/gameplay/GameplayIncorrect.js'></script>
+        <script src='source/game/gameStates/titleScreen/TitleScreen.js'></script>
+        <script src='source/game/gameStates/titleScreen/TitleScreenIn.js'></script>
+        <script src='source/game/gameStates/titleScreen/TitleScreenOut.js'></script>
+        <script src='source/game/Game.js'></script>
+        <script src='source/game/vertices.dat'></script>
+        <script src='source/math/ColorScheme.js'></script>
+        <script src='source/math/Random.js'></script>
+        <script src='source/shaders/Color.glsl'></script>
+        <script src='source/shaders/Gouraud.glsl'></script>
+        <script src='source/shaders/Line.glsl'></script>
+        <script src='source/webGLHelpers/GLBuffer.js'></script>
+        <script src='source/webGLHelpers/GLProgram.js'></script>
+        <script src='source/webGLHelpers/GLShader.js'></script>
+        
+        <!-- The UI for the game -->
+        <div id='ui'>
+            <div id='title'></div>
+            <div id='startInfo'>Press Any Key to Start</div>
+            
+            <div id='controlInfo'>
+                Use the Arrow Keys or WASD to Rotate <br>
+                the Structure to Fit Into the Silhouette Shown
+            </div>
+            
+            <div id='points'></div>
+        </div>
+        
+        <!-- The canvas the game is displayed on -->
+        <canvas id='canvas'></canvas>
+    </body>
+</html>
